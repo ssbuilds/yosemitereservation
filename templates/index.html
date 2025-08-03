@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+            <div class="card bg-dark">
+                <div class="card-body p-4">
+                    <h1 class="card-title">Yosemite Entry Made Easy</h1>
+                    <p class="card-text">Stay informed about Yosemite's entry reservation requirements! Our monitoring system will notify you when entry reservations are required for your planned visit month.</p>
+
+                    <form action="{{ url_for('monitor') }}" method="POST" class="needs-validation" novalidate>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email address</label>
+                            <input type="email" class="form-control form-control-lg" id="email" name="email" 
+                                   placeholder="your@email.com" required>
+                            <div class="form-text text-muted">We'll never share your email with anyone else.</div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="month" class="form-label">Month of Visit</label>
+                            <select class="form-select form-select-lg" id="month" name="month" required>
+                                <option value="">Choose your month...</option>
+                                <option value="January">January</option>
+                                <option value="February">February</option>
+                                <option value="March">March</option>
+                                <option value="April">April</option>
+                                <option value="May">May</option>
+                                <option value="June">June</option>
+                                <option value="July">July</option>
+                                <option value="August">August</option>
+                                <option value="September">September</option>
+                                <option value="October">October</option>
+                                <option value="November">November</option>
+                                <option value="December">December</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg w-100">
+                            Monitor Entry Requirements
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <div class="image-carousel">
+                <img src="https://images.unsplash.com/photo-1610964396403-21a553be887c" class="img-fluid rounded mb-3" alt="Yosemite Valley at Sunset">
+                <img src="https://images.unsplash.com/photo-1610964396035-7fbb6537ef7c" class="img-fluid rounded mb-3" alt="Half Dome Mountain">
+                <img src="https://images.unsplash.com/photo-1585004214796-ab4a58f1c39f" class="img-fluid rounded" alt="Yosemite Waterfall">
+            </div>
+            <div class="mt-4 text-center">
+                <p class="text-muted">Plan ahead for your Yosemite National Park visit</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

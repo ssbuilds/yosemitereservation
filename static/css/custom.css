@@ -1,0 +1,130 @@
+/* Nature-inspired color scheme */
+:root {
+    --forest-green: #2c5530;
+    --mountain-gray: #4a4a4a;
+    --sky-blue: #7cafc4;
+    --warm-sand: #f4d03f;
+    --slate: #2c3e50;
+}
+
+body {
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+    background: linear-gradient(145deg, #1a1a1a, #2d2d2d);
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.navbar {
+    background-color: var(--forest-green) !important;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.image-carousel {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+.image-carousel img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    transition: all 0.5s ease-in-out;
+    filter: brightness(0.9);
+}
+
+.image-carousel img:hover {
+    filter: brightness(1);
+    transform: scale(1.02);
+}
+
+.form-control, .form-select {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--bs-light);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--sky-blue);
+    box-shadow: 0 0 0 0.25rem rgba(124, 175, 196, 0.25);
+    color: var(--bs-light);
+}
+
+.btn-primary {
+    background-color: var(--sky-blue);
+    border: none;
+    padding: 0.75rem 2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #6b9daf;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+    color: var(--warm-sand);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+}
+
+.card-text {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 2rem;
+}
+
+/* Form labels with better contrast */
+.form-label {
+    color: var(--warm-sand);
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .image-carousel img {
+        height: 300px;
+    }
+
+    .card-title {
+        font-size: 1.75rem;
+    }
+
+    .card-text {
+        font-size: 1rem;
+    }
+}
+
+/* Animation for success messages */
+.alert {
+    animation: slideIn 0.5s ease-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
